@@ -4,120 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Seun B | Tech & Business Hybrid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #f5f7fa;
-      --text: #1a1a1a;
-      --accent: #1d4ed8;
-      --card: white;
-      --gold: #d4af37;
-      --dark-grey: #2e2e2e;
-    }
-    body.dark {
-      --bg: #1e1e1e;
-      --text: #eeeeee;
+      --gradient: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+      --text: #ffffff;
       --accent: #60a5fa;
-      --card: #2c2c2c;
-      --gold: #ffd700;
-      --dark-grey: #444;
-    }
-    * {
-      transition: background 0.3s, color 0.3s;
+      --btn-glossy: linear-gradient(135deg, #3b82f6, #2563eb);
+      --btn-hover: #1e40af;
+      --initials-glow: 0 0 10px #60a5fa, 0 0 20px #60a5fa;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: var(--bg);
+      font-family: 'Outfit', sans-serif;
+      background: var(--gradient);
       color: var(--text);
-      animation: fadeIn 1s ease-in;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      overflow-x: hidden;
     }
     header {
-      background: var(--accent);
-      color: white;
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 80px 20px 40px;
       position: relative;
       width: 100%;
-      max-width: 800px;
-      box-sizing: border-box;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
+      max-width: 900px;
     }
     .initials {
       width: 120px;
       height: 120px;
+      background: #1e293b;
+      color: var(--accent);
       border-radius: 50%;
-      margin: 0 auto 20px;
-      background-color: var(--dark-grey);
-      color: var(--gold);
-      font-weight: bold;
-      font-size: 3em;
+      font-weight: 800;
+      font-size: 3.2em;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-      animation: popIn 1s ease-in-out;
-      animation-delay: 0.3s;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-    }
-    @keyframes popIn {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      margin: 0 auto 20px;
+      box-shadow: var(--initials-glow);
     }
     h1 {
-      font-size: 2.5em;
-      width: 0ch;
-      overflow: hidden;
-      white-space: nowrap;
-      margin: 0 auto 10px auto;
-      animation: typing 3.5s steps(20, end) forwards;
-    }
-    @keyframes typing {
-      to {
-        width: 20ch;
-      }
+      font-size: 2.8em;
+      font-weight: 800;
+      margin: 0 0 10px;
     }
     p {
-      font-size: 1.1em;
+      font-size: 1.2em;
+      color: #cbd5e1;
       max-width: 700px;
-      margin: 10px auto 0 auto;
-    }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-      width: 100%;
-      max-width: 800px;
-      box-sizing: border-box;
+      margin: 0 auto;
     }
     .btn {
       display: inline-block;
       margin: 10px;
       padding: 12px 25px;
-      background: var(--accent);
+      background: var(--btn-glossy);
       color: white;
+      font-weight: 600;
       border-radius: 6px;
-      font-weight: bold;
       text-decoration: none;
-      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .btn:hover {
-      background: #153db1;
+      background: var(--btn-hover);
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .button-group {
+      margin-top: 30px;
+    }
+    .social-icons {
+      margin-top: 40px;
     }
     .social-icons a {
-      font-size: 1.5em;
+      font-size: 1.6em;
       margin: 0 10px;
       color: var(--accent);
       transition: transform 0.3s;
@@ -126,100 +93,78 @@
       transform: scale(1.2);
     }
     .toggle-mode {
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
+      background: #0f172a;
+      color: white;
+      border: 1px solid #334155;
+      border-radius: 30px;
+      padding: 10px 16px;
       cursor: pointer;
-      font-size: 1.2em;
-      background: var(--card);
-      border: none;
-      padding: 10px 14px;
-      border-radius: 20px;
-      color: var(--text);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 10;
+      font-size: 0.9em;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
     }
     footer {
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-      background: var(--card);
-      width: 100%;
-      max-width: 800px;
-      box-sizing: border-box;
       margin-top: auto;
-      border-radius: 0 0 12px 12px;
+      padding: 20px;
+      font-size: 0.9em;
+      text-align: center;
+      background: #1e293b;
+      width: 100%;
+      color: #94a3b8;
     }
-    .button-group {
-      margin-top: 20px;
-    }
-    .button-group .btn {
-      margin: 10px 10px;
-    }
-
-    /* Responsive adjustments */
     @media (max-width: 600px) {
       h1 {
-        font-size: 1.8em;
-        animation: typing 3.5s steps(20, end) forwards;
-        max-width: 90vw;
+        font-size: 2em;
       }
       .initials {
         width: 90px;
         height: 90px;
         font-size: 2.2em;
-        box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-      }
-      p {
-        font-size: 1em;
-        padding: 0 10px;
       }
       .btn {
-        padding: 10px 18px;
-        font-size: 0.9em;
-        margin: 8px 6px;
-      }
-      .social-icons a {
-        font-size: 1.3em;
-        margin: 0 8px;
-      }
-      footer {
-        font-size: 0.8em;
+        padding: 10px 20px;
+        font-size: 0.95em;
       }
       .toggle-mode {
         padding: 8px 12px;
-        font-size: 1em;
-        top: 10px;
-        right: 10px;
+        font-size: 0.85em;
       }
     }
   </style>
 </head>
 <body>
 
-<button class="toggle-mode" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">
-  🌙 Toggle Dark Mode
-</button>
+<button class="toggle-mode" onclick="toggleDarkMode()">🌙 Toggle Mode</button>
 
-<header>
+<header data-aos="fade-up">
   <div class="initials">SB</div>
   <h1>Hi, I'm Seun Balogun</h1>
-  <p>Linux and AIX Support Personnel · Helpdesk Support with O365 · Storage Admin · DevOps and Business Analyst</p>
+  <p>Linux and AIX Support • O365 Helpdesk • Storage Admin </p> 
+  <p>DevOps & Business Analyst</p>
 </header>
 
-<section>
+<section data-aos="fade-up" data-aos-delay="100">
   <div class="button-group">
     <a class="btn" href="mailto:seun@seunb.com">Contact Me</a>
-    <a class="btn" href="https://seunb.com/resume" target="_blank" rel="noopener noreferrer">View Resume</a>
-    <a class="btn" href="https://devblog.seunb.com" target="_blank" rel="noopener noreferrer">My Blog</a>
-    <a class="btn" href="https://pizza.seunb.com" target="_blank" rel="noopener noreferrer">Order Pizza Demo</a>
+    <a class="btn" href="https://seunb.com/resume" target="_blank">View Resume</a>
+    <a class="btn" href="https://devblog.seunb.com" target="_blank">My Blog</a>
+    <a class="btn" href="https://pizza.seunb.com" target="_blank">Pizza Demo</a>
   </div>
 
-  <div class="social-icons" style="margin-top: 30px;">
-    <a href="https://linkedin.com/in/seun-ob" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://github.com/balogsun" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://x.com/balogsen" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.facebook.com/balogun.olaoluseun/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <div class="social-icons">
+    <a href="https://linkedin.com/in/seun-ob" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/balogsun" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://x.com/balogsen" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.facebook.com/balogun.olaoluseun/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
   </div>
 </section>
 
@@ -227,12 +172,26 @@
   &copy; 2025 Seun B. All rights reserved.
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  AOS.init();
+
   function toggleDarkMode() {
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle('light-theme');
+    const isLight = document.body.classList.contains('light-theme');
+    document.querySelector('.toggle-mode').textContent = isLight ? '🌚 Dark Mode' : '🌙 Light Mode';
+    if (isLight) {
+      document.documentElement.style.setProperty('--gradient', '#f8fafc');
+      document.documentElement.style.setProperty('--text', '#1e293b');
+      document.documentElement.style.setProperty('--btn-glossy', 'linear-gradient(135deg, #3b82f6, #60a5fa)');
+      document.documentElement.style.setProperty('--btn-hover', '#2563eb');
+    } else {
+      document.documentElement.style.setProperty('--gradient', 'linear-gradient(135deg, #0f172a, #1e293b, #334155)');
+      document.documentElement.style.setProperty('--text', '#ffffff');
+      document.documentElement.style.setProperty('--btn-glossy', 'linear-gradient(135deg, #3b82f6, #2563eb)');
+      document.documentElement.style.setProperty('--btn-hover', '#1e40af');
+    }
   }
 </script>
-
 </body>
 </html>
-
